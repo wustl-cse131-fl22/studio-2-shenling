@@ -14,37 +14,33 @@ public class studio2 {
 		boolean status;
 		System.out.print("Input starting amount of money: ");
 		startAmount = in.nextInt();
-		
+
 		winLimit = 50;
-		
-		while (simulation <500) {
+
+		while (simulation < 500) {
 			System.out.println("NEW SIMULATION STARTING");
-			round =1;
-			while (startAmount < winLimit && startAmount != 0) 
-			{
+			round = 1;
+			while (startAmount < winLimit && startAmount != 0) {
 				System.out.println(round);
-				winChance = Math.random();
-				if (winChance >= 0.5) {
+				if (Math.random() >= 0.5) {
 					startAmount++;
 					System.out.println("won money");
 					round++;
-				}
-				else {
+				} else {
 					startAmount--;
 					System.out.println("lost money");
 					round++;
 				}
 			}
-			
+
 			if (startAmount == winLimit) {
 				simulation++;
 				System.out.println("won");
-				//break;
-			}
-			else if (startAmount == 0){
+				// break;
+			} else if (startAmount == 0) {
 				simulation++;
 				System.out.println("lose");
-				//break;
+				// break;
 			}
 //			if (startAmount == winLimit) {
 //				simulation++;
